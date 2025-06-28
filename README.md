@@ -15,7 +15,7 @@ This project involves building a machine learning model to predict sales of vari
 
 - **Total Rows**: 8,523  
 - **Total Features**: 12  
-- **Source**: [Kaggle – Big Mart Sales Prediction Dataset](https://www.kaggle.com/datasets/brijbhushannanda1979/bigmart-sales-data)
+- **Source**: [Kaggle – Big Mart Sales Prediction Dataset](https://www.kaggle.com/datasets/akashdeepkuila/big-mart-sales?resource=download)
 
 ### Key Features:
 - `Item_Identifier`, `Item_Weight`, `Item_Fat_Content`
@@ -50,7 +50,7 @@ This project involves building a machine learning model to predict sales of vari
 - **XGBoost Regressor**
 
 ### ✅ Model Performance:
-- Achieved **up to 86% R² accuracy**
+- Achieved **up to 63% R² accuracy**
 - Evaluated using **R² score**, **Root Mean Squared Error (RMSE)**, and **Cross-Validation**
 
 ---
@@ -68,28 +68,9 @@ This project involves building a machine learning model to predict sales of vari
 Big-Mart-Sales-Prediction/
 ├── Big Mart Sales Prediction.ipynb
 ├── README.md
-├── big_mart_Train.csv
-├── big_mart_Test.csv
+├── Train-Set.csv
+├── Test-Set.csv
 └── requirements.txt
 ```
 
 ---
-
-## 🚀 Getting Started
-
-1. Clone the repo or download the files.
-2. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
-3. Run the Jupyter Notebook:
-   ```bash
-   jupyter notebook
-   ```
-4. Follow through the notebook to see data preprocessing, model training, and evaluation.
-
----
-
-## 📬 Contact
-
-For any queries or collaboration opportunities, feel free to reach out.
