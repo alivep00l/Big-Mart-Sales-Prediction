@@ -1,76 +1,79 @@
-# 🛒 Big Mart Sales Prediction using Machine Learning
+# 🛒 Big Mart Sales Prediction using Machine Learning (XGBoost)
 
-This project involves building a machine learning model to predict sales of various products across different Big Mart outlets. By analyzing historical sales data, the model helps in forecasting future product demand — aiding inventory management and business strategy.
-
----
-
-## 📌 Project Objective
-
-- Predict the **sales of products** based on product characteristics and store attributes.
-- Provide valuable insights to help **optimize product placement**, **restocking**, and **marketing decisions**.
+This repository contains a machine learning project that predicts sales for Big Mart products using historical sales data. The project involves cleaning real-world data, analyzing trends, and building a regression model to forecast sales based on product and outlet characteristics.
 
 ---
 
-## 📊 Dataset Overview
+## 📌 Objective
 
-- **Total Rows**: 8,523  
-- **Total Features**: 12  
-- **Source**: [Kaggle – Big Mart Sales Prediction Dataset](https://www.kaggle.com/datasets/akashdeepkuila/big-mart-sales?resource=download)
-
-### Key Features:
-- `Item_Identifier`, `Item_Weight`, `Item_Fat_Content`
-- `Item_Visibility`, `Item_Type`, `Item_MRP`
-- `Outlet_Identifier`, `Outlet_Size`, `Outlet_Location_Type`, `Outlet_Type`
-- `Item_Outlet_Sales` (Target variable)
+To build an ML model that predicts **Item Outlet Sales** using product features and store attributes. This helps Big Mart in:
+- Better inventory planning
+- Strategic marketing
+- Improved supply chain management
 
 ---
 
-## 🔧 Tools & Technologies Used
+## 📊 Dataset Description
 
-- **Python**, **Pandas**, **NumPy**
-- **Seaborn** & **Matplotlib** for EDA
-- **Scikit-learn**, **XGBoost** for modeling
-- **Jupyter Notebook** for implementation
+- **Source**: [Kaggle - Big Mart Sales Dataset](https://www.kaggle.com/datasets/brijbhushannanda1979/bigmart-sales-data)
+- **Shape**: 8,523 rows × 12 columns
 
----
-
-## 🧹 Data Preprocessing
-
-- Handled **missing values** in `Item_Weight` and `Outlet_Size`
-- **Encoded categorical variables** using Label Encoding and One-Hot Encoding
-- **Standardized** inconsistent entries (e.g., fat content labels)
-- Removed outliers and treated zero visibility values
-
----
-
-## 🤖 Machine Learning Models Used
-
-- **Linear Regression**
-- **Random Forest Regressor**
-- **XGBoost Regressor**
-
-### ✅ Model Performance:
-- Achieved **up to 63% R² accuracy**
-- Evaluated using **R² score**, **Root Mean Squared Error (RMSE)**, and **Cross-Validation**
+### 🔑 Feature Details:
+| Feature | Description |
+|---------|-------------|
+| `Item_Identifier` | Unique product ID |
+| `Item_Weight` | Weight of product |
+| `Item_Fat_Content` | Low Fat/Regular |
+| `Item_Visibility` | % of product visible in store |
+| `Item_Type` | Type/category of product |
+| `Item_MRP` | Maximum Retail Price |
+| `Outlet_Identifier` | Unique store ID |
+| `Outlet_Establishment_Year` | Year store was established |
+| `Outlet_Size` | Size of the store |
+| `Outlet_Location_Type` | Urban/Tier 2/3 classification |
+| `Outlet_Type` | Grocery store, Supermarket type |
+| `Item_Outlet_Sales` | 💡 Target variable – Product sales |
 
 ---
 
-## 📈 Exploratory Data Analysis
+## 📊 Exploratory Data Analysis
 
-- **Correlation heatmaps**, **distribution plots**, and **boxplots** were used to understand feature relationships
-- Sales trends were explored across **store types**, **item categories**, and **MRP ranges**
+- Distribution plots for numeric features: `Item_Weight`, `Item_MRP`, `Item_Visibility`, `Item_Outlet_Sales`
+- Countplots for categorical variables: `Item_Fat_Content`, `Item_Type`, `Outlet_Size`
+- Year-wise outlet establishment trends
+
+---
+
+## 🧹 Data Cleaning & Preprocessing
+
+- Filled missing `Item_Weight` using **mean**
+- Imputed missing `Outlet_Size` based on **mode by outlet type**
+- Standardized categorical values like `Item_Fat_Content` (`LF` → `Low Fat`)
+- Applied **Label Encoding** to convert categorical variables into numeric form
 
 ---
 
-## 📁 Repository Structure
+## 🧠 Model Building
 
-```
-Big-Mart-Sales-Prediction/
-├── Big Mart Sales Prediction.ipynb
-├── README.md
-├── Train-Set.csv
-├── Test-Set.csv
-└── requirements.txt
-```
+### 🔍 Model Used:  
+**XGBoost Regressor** – chosen for its robustness in handling structured data.
+
+### 📉 Train-Test Split:
+- 80% training, 20% testing using `train_test_split`
+
+### 🧪 Model Evaluation:
+- **R² Score on Training Set**: ~0.63  
+- **R² Score on Testing Set**: ~0.57  
+(*indicates model slightly overfits but captures major trends*)
 
 ---
+
+## 📁 Project Workflow
+
+1. **Import Libraries**: Load pandas, numpy, seaborn, matplotlib, XGBoost, sklearn
+2. **Load Dataset**: Read and explore the CSV data
+3. **Clean & Preprocess**: Handle missing values, fix labels, encode categories
+4. **EDA**: Visualize trends using plots
+5. **Train-Test Split**: Separate the data
+6. **Model Training**: Train XGBoost on the training data
+7. **Evaluate Model**: Check R² scores and prediction quality
