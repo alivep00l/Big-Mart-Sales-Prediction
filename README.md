@@ -1,4 +1,4 @@
-# 🛒 Big Mart Sales Prediction using Machine Learning (XGBoost)
+# 🛒 Big Mart Sales Prediction using Machine Learning
 
 This repository contains a machine learning project that predicts sales for Big Mart products using historical sales data. The project involves cleaning real-world data, analyzing trends, and building a regression model to forecast sales based on product and outlet characteristics.
 
